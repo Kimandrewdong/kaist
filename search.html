@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 모든 경로에 기본 애니메이션 설정 */
+        .animate-path {
+            transform: scale(0); /* 경로의 초기 크기를 0으로 설정 */
+            transform-origin: center; /* 변환의 기준을 경로의 중앙으로 설정 */
+            animation: scaleUp 2s forwards; /* 2초 동안 확장되는 애니메이션 */
+            stroke: #004C98; /* 경로 색상 */
+            stroke-width: 2; /* 선 두께 */
+            fill: none; /* 채우기 없음 */
+        }
+
+        /* 두 번째 SVG의 각 경로에 대한 애니메이션 지연 시간 설정 */
+        .path1 {
+            animation-delay: 0s; /* 첫 번째 경로 */
+        }
+
+        .path2 {
+            animation-delay: 1s; /* 두 번째 경로 */
+        }
+
+        .path3 {
+            animation-delay: 2s; /* 세 번째 경로 */
+        }
+
+        .path4 {
+            animation-delay: 3s; /* 네 번째 경로 */
+        }
+
+        /* 애니메이션 정의: 경로가 확장되면서 나타나는 효과 */
+        @keyframes scaleUp {
+            to {
+                transform: scale(1); /* 경로가 원래 크기로 확장되며 나타남 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 첫 번째 SVG (애니메이션 제거) -->
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M28 27L20.5 19.5M5 13C5 17.9706 9.02944 22 14 22C18.9706 22 23 17.9706 23 13C23 8.02944 18.9706 4 14 4C9.02944 4 5 8.02944 5 13Z" stroke="#2E4454" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+    <!-- 두 번째 SVG -->
+    <svg width="1499" height="427" viewBox="0 0 1499 427" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1499" height="427" fill="white"/>
+        <path class="animate-path path1" d="M1181.76 0V87.0131H1293.98V417.843H1383.18V87.0131H1495.41V0H1181.76Z" />
+        <path class="animate-path path2" d="M1057.51 165.407H982.95C963.146 165.407 947.101 155.191 947.101 126.202C947.101 97.1662 963.158 87.0131 982.95 87.0131H1143.28V0H972.356C908.572 0 856.831 45.8313 856.831 126.186C856.831 206.621 908.559 252.389 972.356 252.389H1049.07C1068.88 252.389 1084.9 262.589 1084.9 291.594C1084.9 320.645 1068.86 330.783 1049.07 330.783H869.217V417.843H1057.51C1121.29 417.843 1173.03 372.107 1173.03 291.688C1173.03 211.349 1121.3 165.407 1057.51 165.407Z" />
+        <path class="animate-path path3" d="M794.165 0H704.962V417.843H794.165V0Z" />
+        <path class="animate-path path4" d="M433.364 0L307.194 376.013L186.918 208.914L337.313 0H235.432L92.8999 198.349V0H3.70947V417.843H92.8999V219.478L235.432 417.843H383.833L485.994 102.717L560.169 334.42H442.243L470.242 417.843H678.831L538.599 0H433.364Z" />
+    </svg>
+</body>
+</html>
